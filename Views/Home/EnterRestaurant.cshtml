@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Enter a restaurant";
+}
+
+@model Assignment4.Models.Suggestion
+
+<h4 class="bg-primary text-white text-center">Did we miss one of your favorite restaurants? Please submit it!</h4>
+
+<form asp-action="EnterRestaurant" method="post">
+    <fieldset style="background-color:#dddddd; padding:5px 10px; width:400px; border-color:#847979; margin:auto">
+        <!--
+            I did not make any fields required because the instructions did not specifically say to do so    
+        -->
+        <div class="form-group">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" />
+        </div>
+        <br />
+
+        <div>
+            <label asp-for="RestaurantName">Restaurant name:</label>
+            <input asp-for="RestaurantName" />
+        </div>
+        <br />
+
+        <div>
+            <label asp-for="FavoriteDish">Favorite Dish:</label>
+            <input asp-for="FavoriteDish" />
+        </div>
+        <br />
+
+        <div>
+            <label asp-for="RestaurantPhone">Restaurant Phone Number:</label>
+            <!--The input type is phone and the pattern describes the necessary pattern required when using the input (example: 555-555-5555)
+                The user will receive a message if the phone number does not follow the format and will not be able to continue until following the exact format
+                The input is not required (they can leave it blank) but if a user wants to enter a phone number, they will have to follow the format.
+            -->
+            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" asp-for="RestaurantPhone" />
+            <small>Format: 123-456-7890</small>
+        </div>
+        <br />
+
+        <button type="submit" class="btn btn-success">Submit Restaurant</button>
+    </fieldset>
+</form>

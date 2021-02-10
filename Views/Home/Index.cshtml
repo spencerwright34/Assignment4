@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Welcome to the Top 5 Restaurants in Provo";
+}
+
+@model IEnumerable<string>
+
+
+<!--
+    Spencer Wright, Group 3-1
+    Assignment 4
+    Description: create a website that displays the top 5 restaurants in Provo; the list of restaurants will be displayed from an array
+-->
+
+<h4 class="bg-primary text-white text-center" >These are the best restaurants in the Provo area</h4>
+
+<div class="list-group">
+    <ul>
+        @foreach (string i in Model)
+        {
+            <li class="list-group-item">@i</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Spencer Wright, group 3-1
+        Assignment 4
+        Description: make a site that will show the top 5 restaurants in the Provo area
+    -->
+
+    <title>Assignment 4</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <!--Links the bootstrap style to the layout page, which will be implemented on all pages-->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--Navigation bar-->
+        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+        <a class="nav-link" asp-controller="Home" asp-action="EnterRestaurant">Submit a Restaurant</a>
+        <a class="nav-link" asp-controller="Home" asp-action="RestaurantList">Restaurant List</a>
+    </nav>
+
+    <div class="text-center">
+        <h1>@ViewBag.Title</h1>
+    </div>
+
+    @RenderBody()
+
+    <br />
+    <br />
+
+
+    <footer style="position:absolute; bottom:0; width:100%; height:2.5rem; text-align:center">Spencer Wright, Inc. 2021</footer>
+</body>
+
+</html>
